@@ -2,8 +2,8 @@ name: Issues event
 on: issues
 
 jobs:
-  issues-listener:
+  info:
     runs-on: ubuntu-latest
     steps:
-    - name: Display Issues event
-      run: echo "${{ toJSON(github) }}"
+      - name: Output GH context
+        run: echo "${{ toJSON(github) }}"
