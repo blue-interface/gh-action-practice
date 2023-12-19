@@ -1,0 +1,17 @@
+name: Deployment
+on: push
+
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Install dependencies
+      run: npm ci
+    - name: Lint
+      run: npm lint
+    - name: Test
+      run: npm test
+    - name: Build
+      run: npm build
