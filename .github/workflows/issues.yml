@@ -6,4 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Output GH context
-        run: echo "${{ toJSON(github) }}"
+        run: |
+          echo "The title created was ${{ github.event.issue.title }}"
+          echo "The body was ${{ github.event.issue.body }}"
